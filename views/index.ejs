@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta autor="Julio Cesar Nieto Castillo">
+    <meta description="Curriculum vitae hecho con express y EJS">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="ICON" href="icon.ico">
+    <title>Curriculum</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mis_datos">
+          <div class="img"><img src="images/img.jpg" alt=""></div>
+            <div class="datos">
+                <h1>Julio Cesar Nieto Castillo</h1><br>
+                <h2><%= __('cedula') %>: 29908830</h2><br>
+                <h2><%= __('edad') %>: 19 años</h2><br>
+            </div>
+
+        
+       
+         </div>
+         <div class="article">
+          <article class="ar_1">
+            <h3><%= __('experiencia') %></h3>
+            <p>
+               <%= __('expeconte') %>
+            </p>
+              
+          </article>
+        
+          <article class="ar_2">
+            <h3><%= __('formacion') %></h3>
+            <ul class="lista_1">
+                <li><b>2015</b>: U.E <%= __('colegio') %> San Adres <%= __('edup') %></li>
+                <li><b>2020</b>: U.E José Angel de Alamo <%= __('edus') %></li>
+                <li><%= __('inglesI') %></li>
+                <br>
+                <p> <%= __('tambien') %></p>
+            </ul>
+              
+          </article>
+
+          <article class="ar_3">
+               <h3><%= __('Redes') %></h3>
+            <ul>
+                <li><b>Facebook:</b><a target="_blank" href="https://www.facebook.com/profile.php?id=100009566161902"><%= __('aqui') %> </a></li>
+                <li><b><%= __('tlf') %>: +584241889350</b></li>
+                <li><b>Github:</b><a target="_blank" href="https://github.com/juliocnc19"><%= __('aqui') %></a></li>
+                <li><b><%= __('correo') %>:</b> juliocnietoc19@gmail.com</li>
+            </ul>
+
+          </article>
+
+          <article class="ar_4">
+            <h3><%= __('leguajes') %></h3>
+              <div><img src="images/domi.jpg"></div>
+              <div><img src="images/c.jpg"></div>
+          </article>
+
+          <article class="ar_5">    
+            <h3><%= __('habilidades') %></h3>
+                <ul>
+                    <li><%= __('buen') %></li>
+                    <li><%= __('adap') %></li>
+                    <li><%= __('abierto') %></li>
+                    <li><%= __('buenmanejo') %></li>
+                    <li><%= __('manejo') %></li>
+                    <li><%= __('tole') %></li>
+                    
+                </ul>
+          </article>
+
+              <h2 class="contactame"><%= __('contactame') %></h2>
+                <form method="post" action="/" class="mensaje">
+                    <input class="nombre" name='nombre' type="text" placeholder="<%= __('ingresenom') %>" required="true" value="<%= modelo.nombre%>">
+                    <input class="mail" name='email' type="email"  placeholder="<%= __('ingresemail') %>" required="true" value="<%= modelo.email%>">
+                    <input class="contenido"  name='comentario' type="text" placeholder="<%= __('comentario') %>" required="true" value="<%= modelo.comentario%>">
+                    <input type="hidden" value="<%= modelo.ipdire%>">
+                    <input type="hidden"  value="<%= modelo.fecha%>">
+                    <input type="hidden"  value="<%= modelo.hora%>">
+                    <input type="hidden"  value="<%= modelo.geoloca%>">
+                    <div>
+                        <div class="g-recaptcha" data-sitekey="6LfRjYcgAAAAAPhA25XtMNcUfzaFYzc-eKQgl6fa">
+                    </div>
+                    <input type="submit" class="enviar" value="<%= __('Enviar') %>">
+                </form>
+        </div>
+
+        <div class="translate">
+          <button onclick="window.location.href='/translate'"><%= __('traducir') %></button>
+        </div>
+     
+     </div>
+        
+        
+</body>
+</html>
